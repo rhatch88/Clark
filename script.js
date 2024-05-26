@@ -1,7 +1,8 @@
 let slideIndex = 0;
+const slides = document.querySelectorAll('.slides img');
+const intervalTime = 4000; // can adjust miliseconds if its wonky
 
 function showSlide(n) {
-    const slides = document.querySelectorAll('.slides img');
     if (n >= slides.length) { slideIndex = 0; }
     if (n < 0) { slideIndex = slides.length - 1; }
     slides.forEach(slide => slide.style.display = "none");
@@ -16,5 +17,11 @@ function prevSlide() {
     showSlide(slideIndex -= 1);
 }
 
-// Display first slide when the page loads
+function autoSlide() {
+    nextSlide();
+}
+
+
 showSlide(slideIndex);
+
+setInterval(autoSlide, intervalTime);
