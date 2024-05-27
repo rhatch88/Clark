@@ -1,6 +1,6 @@
 let slideIndex = 0;
 const slides = document.querySelectorAll('.slides img');
-const intervalTime = 4000; // can adjust miliseconds if its wonky
+const intervalTime = 100; // can adjust miliseconds if its wonky
 
 function showSlide(n) {
     if (n >= slides.length) { slideIndex = 0; }
